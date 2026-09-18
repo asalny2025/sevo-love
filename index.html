@@ -139,11 +139,36 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,14vw,92px);margin:8
   .event-text{padding-right:12px}.event-text p{font-size:14px}
 }
 </style>
+
+<style>
+#passwordGate{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px;position:relative;text-align:center}
+#passwordGate .big-heart{width:min(52vw,220px);margin-bottom:20px}
+#passwordGate .big-heart:before{opacity:.9}
+#passwordGate .big-heart:after{opacity:.9}
+#passwordInput::placeholder{color:#d9b8c4}
+</style>
 </head>
 <body>
 <main class="page">
 
-<section id="gate">
+<section id="passwordGate">
+  <div class="gate-content">
+    <div class="small-line">PRIVATE · JUST FOR SEVO</div>
+    <div class="big-heart" style="cursor:default"><span>❤️</span></div>
+    <p class="enter">فيه حاجة صغيرة مستنياكي يا Sevo</p>
+    <p class="tap">اكتبي كلمة السر وادخلي.</p>
+    <form id="passwordForm" style="margin-top:22px">
+      <input id="passwordInput" type="password" inputmode="numeric" autocomplete="off"
+        placeholder="كلمة السر" aria-label="كلمة السر"
+        style="width:min(330px,85vw);padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:white;text-align:center;font:600 16px Cairo,Arial;outline:none">
+      <button class="btn primary" type="submit" style="margin-top:12px">ادخلي لقلبي ❤️</button>
+      <div id="passwordError" style="color:#ff9db8;font-size:13px;margin-top:10px;min-height:22px"></div>
+    </form>
+    <div class="scroll-note">Sevo · 2026</div>
+  </div>
+</section>
+
+<section id="gate" class="hidden">
   <div class="gate-content">
     <div class="small-line">A LITTLE PLACE FOR MY FAVORITE PERSON</div>
     <div class="big-heart" id="enterHeart" aria-label="ادخل للقلب"><span>اضغط ❤️</span></div>
@@ -228,9 +253,15 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,14vw,92px);margin:8
 </main>
 
 <script>
+const passwordGate = document.getElementById('passwordGate');
+const passwordForm = document.getElementById('passwordForm');
+const passwordInput = document.getElementById('passwordInput');
+const passwordError = document.getElementById('passwordError');
 const gate = document.getElementById('gate');
 const story = document.getElementById('story');
 const heart = document.getElementById('enterHeart');
+
+const SECRET = "12082026"; // كلمة السر الحالية: 12/08/2026
 
 function enter(){
   gate.classList.add('hidden');
@@ -238,6 +269,22 @@ function enter(){
   window.scrollTo({top:0,behavior:'instant'});
   burst(window.innerWidth/2, window.innerHeight/2, 18);
 }
+
+passwordForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  if(passwordInput.value === SECRET){
+    passwordGate.classList.add('hidden');
+    gate.classList.remove('hidden');
+    passwordInput.value = '';
+    passwordError.textContent = '';
+    burst(window.innerWidth/2, window.innerHeight/2, 18);
+  } else {
+    passwordError.textContent = 'الكلمة دي مش هي... جربي تاني يا عمري ❤️';
+    passwordInput.value = '';
+    passwordInput.focus();
+  }
+});
+
 heart.addEventListener('click', enter);
 
 function burst(x,y,count=10){
