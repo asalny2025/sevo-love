@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#13070d">
+<meta name="description" content="إلى Sevo — حكاية بدأت يوم 31/7/2026 وكبرت يوم 12/8/2026">
+<title>إلى Sevo ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+  --bg:#10070c; --wine:#6d1839; --rose:#d84d79; --gold:#e8c58b;
+  --cream:#fff7f1; --muted:#e7cfd7; --glass:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:
+  radial-gradient(circle at 20% 10%, rgba(216,77,121,.20), transparent 28%),
+  radial-gradient(circle at 80% 30%, rgba(232,197,139,.12), transparent 24%),
+  linear-gradient(145deg,#10070c 0%,#240b17 52%,#0c0509 100%);
+  color:var(--cream);font-family:Cairo,Arial,sans-serif;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;
+  background-image:radial-gradient(#fff 0.7px,transparent .7px);
+  background-size:26px 26px;mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+.hidden{display:none!important}
+.page{min-height:100vh}
+#gate{
+  min-height:100svh;display:flex;align-items:center;justify-content:center;
+  padding:28px;position:relative;text-align:center;
+}
+.gate-content{max-width:520px;animation:rise 1.1s ease both}
+.small-line{letter-spacing:3px;color:var(--gold);font-size:12px;margin-bottom:18px}
+.big-heart{
+  width:min(72vw,300px);aspect-ratio:1;position:relative;margin:0 auto 28px;
+  display:grid;place-items:center;cursor:pointer;filter:drop-shadow(0 20px 35px rgba(216,77,121,.28));
+  transition:transform .35s ease;
+}
+.big-heart:hover{transform:scale(1.045)}
+.big-heart:before{
+  content:"";position:absolute;width:72%;height:72%;background:linear-gradient(145deg,#ef6b92,#9f214f);
+  transform:rotate(-45deg);border-radius:18% 0 18% 0;
+  box-shadow:0 0 60px rgba(216,77,121,.35),inset -12px -12px 30px rgba(0,0,0,.16);
+}
+.big-heart:after{
+  content:"";position:absolute;top:14%;left:18%;width:33%;height:33%;
+  border-radius:50%;background:linear-gradient(135deg,#ef6b92,#9f214f);
+}
+.big-heart span{position:relative;z-index:2;font-size:28px;font-weight:700;text-shadow:0 2px 15px rgba(0,0,0,.35)}
+.enter{font-size:22px;font-weight:600;margin:0 0 8px}
+.tap{font-size:14px;color:var(--muted);margin:0}
+.scroll-note{margin-top:38px;color:#b98e9d;font-size:12px}
+
+#story{animation:fade .9s ease both}
+.hero{
+  min-height:92svh;position:relative;display:flex;align-items:flex-end;justify-content:center;
+  padding:70px 18px 45px;overflow:hidden;
+}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(16,7,12,.98) 4%,rgba(16,7,12,.40) 55%,rgba(16,7,12,.15))}
+.hero img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;
+  filter:saturate(.92) contrast(1.02);
+}
+.hero-card{position:relative;z-index:2;width:min(760px,100%);text-align:center}
+.kicker{color:var(--gold);font-size:13px;letter-spacing:2px}
+h1{font-family:"Playfair Display",serif;font-size:clamp(48px,14vw,92px);margin:8px 0 2px;line-height:1}
+.hero-card .sub{font-size:17px;color:#f8dce5;margin:12px 0 0}
+.scroll{display:inline-block;margin-top:26px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.22);padding:9px 18px;border-radius:999px;background:rgba(0,0,0,.18);backdrop-filter:blur(8px)}
+
+.section{width:min(900px,92%);margin:auto;padding:82px 0}
+.title{text-align:center;margin-bottom:34px}
+.title .eyebrow{color:var(--gold);font-size:12px;letter-spacing:2px}
+.title h2{font-family:"Playfair Display",serif;font-size:clamp(32px,8vw,52px);margin:8px 0 0}
+.card{
+  background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+  border:1px solid rgba(255,255,255,.11);border-radius:28px;padding:28px;
+  box-shadow:0 20px 60px rgba(0,0,0,.22);backdrop-filter:blur(12px);
+}
+.letter{font-size:18px;line-height:2.05;color:#fff0f4}
+.letter p{margin:0 0 17px}
+.signature{text-align:left;color:var(--gold);font-size:15px;margin-top:25px}
+
+.timeline{display:grid;gap:18px}
+.event{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
+.date{
+  text-align:center;border:1px solid rgba(232,197,139,.28);border-radius:20px;padding:13px 8px;
+  color:var(--gold);background:rgba(232,197,139,.06)
+}
+.date strong{display:block;font-size:19px}
+.date span{font-size:11px;color:#cdaab7}
+.event-text{border-right:2px solid rgba(216,77,121,.45);padding-right:18px}
+.event-text h3{margin:0 0 5px;font-size:19px}
+.event-text p{margin:0;color:#d9c1c9;line-height:1.9}
+
+.question{
+  font-size:clamp(25px,6vw,39px);font-weight:600;text-align:center;line-height:1.65;margin:0 0 28px;
+}
+.answer{font-size:17px;line-height:2.15;color:#f3dfe5;text-align:right}
+.answer strong{color:#ffd4df}
+
+.quote{
+  text-align:center;font-family:"Playfair Display",serif;font-size:clamp(25px,6vw,38px);
+  line-height:1.7;color:#ffe7c1;padding:20px 5px;
+}
+.buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.btn{
+  border:0;text-decoration:none;color:white;padding:13px 22px;border-radius:999px;
+  font-family:inherit;font-weight:600;cursor:pointer;transition:.25s;
+}
+.btn.primary{background:linear-gradient(135deg,#d84d79,#8e2148);box-shadow:0 10px 30px rgba(216,77,121,.25)}
+.btn.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13)}
+.btn:hover{transform:translateY(-2px)}
+
+.final{
+  min-height:70svh;display:grid;place-items:center;text-align:center;padding:80px 20px;
+  position:relative;overflow:hidden;
+}
+.final:before,.final:after{
+  content:"♥";position:absolute;font-size:180px;color:rgba(216,77,121,.045);transform:rotate(-15deg)
+}
+.final:before{right:-20px;top:20px}.final:after{left:-25px;bottom:10px}
+.final-content{position:relative;z-index:1}
+.final h2{font-family:"Playfair Display",serif;font-size:clamp(42px,10vw,78px);margin:0 0 15px}
+.final p{color:#e3cbd3;font-size:16px;line-height:2}
+.footer{padding:24px;text-align:center;color:#876875;font-size:11px}
+
+.heart-particle{position:fixed;pointer-events:none;z-index:99;font-size:18px;animation:float 1.8s ease-out forwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes float{0%{opacity:0;transform:translate(0,0) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translate(var(--x),-120px) scale(1.3) rotate(15deg)}}
+@media(max-width:600px){
+  .hero{min-height:86svh}.hero img{object-position:center 55%}
+  .section{padding:64px 0}.card{padding:22px;border-radius:22px}
+  .letter{font-size:16px}.event{grid-template-columns:90px 1fr;gap:12px}
+  .event-text{padding-right:12px}.event-text p{font-size:14px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+<section id="gate">
+  <div class="gate-content">
+    <div class="small-line">A LITTLE PLACE FOR MY FAVORITE PERSON</div>
+    <div class="big-heart" id="enterHeart" aria-label="ادخل للقلب"><span>اضغط ❤️</span></div>
+    <p class="enter">اضغط وادخل للقلب يا عمري</p>
+    <p class="tap">المكان ده معمول علشانك إنتِ وبس.</p>
+    <div class="scroll-note">Sevo · 2026</div>
+  </div>
+</section>
+
+<section id="story" class="hidden">
+  <header class="hero">
+    <img src="assets/sevo-photo.jpeg" alt="Sevo ❤️">
+    <div class="hero-card">
+      <div class="kicker">إلى أجمل واحدة اختارها قلبي</div>
+      <h1>Sevo</h1>
+      <div class="sub">مش مجرد اسم... دي الحكاية اللي نفسي أكملها معاكي.</div>
+      <a class="scroll" href="#letter">انزلي جوّه الحكاية ↓</a>
+    </div>
+  </header>
+
+  <section class="section" id="letter">
+    <div class="title"><div class="eyebrow">من قلبي ليكي</div><h2>رسالة ليكي</h2></div>
+    <div class="card letter">
+      <p>يا Sevo،</p>
+      <p>أنا ممكن أقعد أقولك بحبك ألف مرة، وكل مرة هحس إن الكلمة لسه مش كفاية. لأن اللي أنا حاسه ناحيتك مش مجرد إعجاب ولا لحظة حلوة وعدّت... أنا لقيت معاكي إحساس بيخليني عايز أكمل، وأطمن، وأبني حاجات كتير وأنا عارف إنك جزء منها.</p>
+      <p>إنتِ مش بس الشخص اللي بحبه، إنتِ الشخص اللي لما بفكر في بكرة بلاقيه موجود في الصورة من غير ما أحاول. بقيتي جزء من تفاصيل يومي، من تفكيري، ومن الحاجات الصغيرة اللي ممكن محدش ياخد باله منها غيري.</p>
+      <p>وعارف إن الحب مش كلام حلو وخلاص. الحب إننا نفضل نختار بعض حتى في الأيام اللي مفيهاش رومانسية، وإننا نتكلم لما نزعل، ونفهم بعض لما نختلف، ونفرح ببعض لما الدنيا تبقى حلوة. وأنا عايز ده معاكي... مش يومين ولا فترة، عايزه حكاية طويلة بجد.</p>
+      <p>ولو سألتيني أنا بحبك قد إيه؟ هقولك: بالقدر اللي يخليني أتمنى أشوفك مبسوطة حتى في وقت أنا مش موجود فيه، وبالقدر اللي يخليني عايز أكون الشخص اللي تلاقيه جنبك وقت ما الدنيا تضيق، مش بس وقت الصور والضحك.</p>
+      <p>أنا مش بوعدك إن كل يوم هيبقى مثالي، لكن أوعدك بحاجة أهم: إني لما أختارك، أختارك بجد. وأفضل أحاول، وأتعلم، وأصلح، وأكبر معاكي... لأنك بالنسبالي مش لحظة حلوة، إنتِ الشخص اللي نفسي أكمل معاه باقي الحكاية.</p>
+      <div class="signature">بحبك... ودي مش نهاية الكلام، دي بدايته. ❤️</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="title"><div class="eyebrow">OUR LITTLE TIMELINE</div><h2>تاريخين مش هنساهُم</h2></div>
+    <div class="timeline">
+      <div class="event">
+        <div class="date"><strong>31/7</strong><span>2026</span></div>
+        <div class="event-text"><h3>يوم بدأ ياخد معنى مختلف</h3><p>يوم من الأيام اللي اتخزنوا في قلبي، وبقوا مرتبطين باسمك وبالإحساس اللي مبيتنسيش.</p></div>
+      </div>
+      <div class="event">
+        <div class="date"><strong>12/8</strong><span>2026</span></div>
+        <div class="event-text"><h3>يوم تاني من حكايتنا</h3><p>تاريخ بسيط على التقويم... لكنه بالنسبالي من التواريخ اللي ليها مكان خاص جدًا.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="title"><div class="eyebrow">THE QUESTION</div><h2>ليه اخترتك إنتِ؟</h2></div>
+    <div class="card">
+      <p class="question">"ليه أنا؟ ليه اخترتني أنا؟"</p>
+      <div class="answer">
+        <p>لأن الحقيقة إن الموضوع مكنش قرار على ورقة وقلم. أنا موقفتش أقارن بينك وبين حد، ولا قعدت أعمل قائمة وأقول دي فيها كذا ودي فيها كذا.</p>
+        <p>أنا اخترتك لأن <strong>وجودك لمس حاجة جوايا</strong>. حسيت معاكي إني مش محتاج أمثل نسخة أحسن من نفسي علشان تتقبليها. حسيت إن فيه راحة، وفيه ضحكة، وفيه تفاصيل صغيرة خلتني أقول: "آه... أنا عايز الشخص ده يكون في حياتي."</p>
+        <p>اخترتك لأنك إنتِ، بكل مميزاتك وعيوبك، مش صورة مثالية في خيالي. وأنا عارف إننا هنختلف وهنزعل وممكن نفهم بعض غلط أوقات، بس برضه عارف إن فيه شخص قدامي يستاهل إني أحاول عشانه.</p>
+        <p>واخترتك لأن لما سألت نفسي: <strong>"مين نفسي أصحى وألاقيه جنبي بعد سنين؟"</strong> لقيت الإجابة بتيجي باسمك إنتِ.</p>
+        <p>فلو عايزة الإجابة في جملة واحدة: <strong>اخترتك لأن قلبي ارتاحلك، وعقلي اقتنع بيكي، وأنا نفسي أكمل معاكي.</strong> ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <div class="quote">"في ناس بنقابلهم في حياتنا... وفي ناس حياتنا نفسها بتتغير بعد ما نقابلهم."</div>
+      <div class="buttons">
+        <a class="btn primary" href="#final">كمّلي ❤️</a>
+        <button class="btn secondary" id="heartsBtn">اضغطي هنا لو بتحبيني 🥹</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="final" class="final">
+    <div class="final-content">
+      <div class="kicker">MY FAVORITE CHAPTER</div>
+      <h2>Sevo ❤️</h2>
+      <p>31/7/2026 · 12/8/2026<br>وما بين التاريخين وبعدهم... نفسي نفضل بنكتب حكايتنا سوا.</p>
+      <div class="buttons"><button class="btn primary" id="loveBtn">بحبك يا عمري ❤️</button></div>
+    </div>
+  </section>
+  <div class="footer">Made with love · for Sevo</div>
+</section>
+</main>
+
+<script>
+const gate = document.getElementById('gate');
+const story = document.getElementById('story');
+const heart = document.getElementById('enterHeart');
+
+function enter(){
+  gate.classList.add('hidden');
+  story.classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'instant'});
+  burst(window.innerWidth/2, window.innerHeight/2, 18);
+}
+heart.addEventListener('click', enter);
+
+function burst(x,y,count=10){
+  const symbols=['♥','❤','♡','✦'];
+  for(let i=0;i<count;i++){
+    const el=document.createElement('div');
+    el.className='heart-particle';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=x+'px'; el.style.top=y+'px';
+    el.style.setProperty('--x',((Math.random()-.5)*180)+'px');
+    el.style.color = Math.random()>.45 ? '#ef6b92' : '#e8c58b';
+    el.style.animationDelay=(Math.random()*.18)+'s';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),2200);
+  }
+}
+document.getElementById('heartsBtn').addEventListener('click',(e)=>{
+  const r=e.currentTarget.getBoundingClientRect();
+  burst(r.left+r.width/2,r.top+r.height/2,22);
+});
+document.getElementById('loveBtn').addEventListener('click',()=>{
+  burst(window.innerWidth/2,window.innerHeight*.55,42);
+});
+</script>
+</body>
+</html>
